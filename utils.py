@@ -1,10 +1,13 @@
-import numpy as np
 import math
+
 import matplotlib.pyplot as plt
+import numpy as np
+
 
 # prints formatted price
 def formatPrice(n):
 	return ("-%" if n < 0 else " %") + "{0:.3f}".format(abs(n))
+
 
 # returns the sigmoid
 def sigmoid(x):
@@ -13,8 +16,8 @@ def sigmoid(x):
 
 # We don't want random-seeding for reproducibilityy! We _want_ two runs to give different results, because we only
 # trust the hyper combo which consistently gives positive results.
-def seed( seed=None):
-    #np.random.seed(7)
+def seed(seed=None):
+	# np.random.seed(7)
     pass
 
 
@@ -22,7 +25,7 @@ def seed( seed=None):
 def getStockDataVec(key):
 	vec = []
 	lines = open("files/input/" + key + ".csv", "r").read().splitlines()
-	column_close_price=4
+	column_close_price = 4
 	for line in lines[1:]:
 		vec.append(float(line.split(",")[column_close_price]))
 
@@ -53,10 +56,8 @@ def plot_barchart(list, file="BT", title='BT', ylabel="Price", xlabel="Date", co
 	# colors[myarray > 0.0] = (0,0,1)
 	plt.clf()
 	plt.bar(x, myarray, color=colors)
-	#plt.text(0, 0,text,  fontdict=font)
+	# plt.text(0, 0,text,  fontdict=font)
 	plt.xlabel(xlabel)
 	plt.ylabel(ylabel)
 	plt.title(title)
 	plt.savefig('files/output/' + file + '.png')
-
-

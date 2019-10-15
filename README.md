@@ -4,11 +4,11 @@ from https://finance.yahoo.com/quote/%5EGSPC?p=^GSPC
 or from https://www.kaggle.com/janiobachmann/s-p-500-time-series-forecasting-with-prophet/data
 
 
-# Policy netork (actor ai_agent.py)
+# Policy network (actor ai_agent.py)
 As illustrated in below figure, model DQN is a Policy network (aka actor cause it acts or give probability of best action
 model input :
  1. historical stock data 
- 2. historicsl market data 
+ 2. historical market data 
  3. investment status, and reward 
  
 model output(action prediction):
@@ -17,7 +17,7 @@ model output(action prediction):
 3. sell
 
 
-![nn](https://github.com/loliksamuel/py-ML-rl-trade/blob/master/files/output/nn.png)
+![nn](./files/output/nn.png)
 
 
 # Value network (critic)
@@ -32,7 +32,7 @@ The policy network outputs an action daily
 the market returns the rewards of such actions (the profit)
 and all this data ( status,   amount of money gain or lost), sent to policy network to train
  
-![rl](https://github.com/loliksamuel/py-ML-rl-trade/blob/master/files/output/rl.png)
+![rl](./files/output/rl.png)
 
 # Action
 there are 3 possible actions that the agent can take, hold, buy, sell
@@ -82,7 +82,7 @@ TD In plain English,
  means maximum future reward for this state and action (s,a) 
 is the immediate reward r plus maximum future reward for the next state
                  
-![max future reward](https://github.com/loliksamuel/py-ML-rl-trade/blob/master/files/output/max_future_reward.png)
+![max future reward](./files/output/max_future_reward.png)
 
 the model get updated every few days.
 

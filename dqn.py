@@ -42,16 +42,20 @@ class Dqn:
 
                 next_state = self.get_state(data, t + 1, num_features)
 
-                print(
-                    f'row #{t} {agent.actions[action]} @{data[t]}, state1={state}, state2={next_state}, reward={reward}')
+                # print(f'row #{t} {agent.actions[action]} @{data[t]}, '
+                #       f'state1={state}, '
+                #       f'state2={next_state}, '
+                #       f'reward={reward}')
                 agent.remember(state, action, reward, next_state,
                                done)  # store contents of memory in buffer for future learning
                 state = next_state
 
                 if done:
                     eps = np.round(agent.epsilon, 3)
-                    print(
-                        f'Episode {episode}/{episodes} Total Profit: {formatPrice(total_profits)} , Total trades: {total_buys}, probability of random action: {eps}')
+                    print(f'Episode {episode}/{episodes}, '
+                          f'Total Profit: {formatPrice(total_profits)}, '
+                          f'Total trades: {total_buys}, '
+                          f'Probability of random action: {eps}')
                     print("---------------------------------------")
                     # rewards_vs_episode.append(total_rewards)
                     profit_vs_episode.append(np.round(total_profits, 4))

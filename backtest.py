@@ -35,8 +35,8 @@ def bt(num_features, use_existing_model, model_name):
             print("-----------------------------------------")
 
 
-stock_name = '^GSPC_1970_2018'  # ^GSPC_2011  GSPC_2019 GSPC_1970_2019 GSPC_1970_2018
-model_name = 'model_ep1800'  # model_ep0, model_ep10, model_ep20, model_ep30
+stock_name = '^GSPC_2019'  # ^GSPC_2011  GSPC_2019 GSPC_1970_2019 GSPC_1970_2018
+model_name = 'model_ep10000'  # model_ep0, model_ep10, model_ep20, model_ep30
 model_inst = load_model("files/output/" + model_name)
 num_features = model_inst.layers[0].input.shape.as_list()[1]
 use_existing_model = True

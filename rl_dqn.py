@@ -12,10 +12,10 @@ np.set_printoptions(precision=4)
 np.set_printoptions(suppress=True)  # prevent numpy exponential #notation on print, default False
 
 # change these params
-stock_name = '^GSPC_01'  # ^GSPC_2001_2010  ^GSPC_1970_2018  ^GSPC_2011
+stock_name = '^GSPC_1970_2018'  # ^GSPC_2001_2010  ^GSPC_1970_2018  ^GSPC_2011
 num_features = 1  # (int) > 0   super simple features
 num_neurons = 4  # (int) > 0
-episodes = 180  # (int) > 0 ,minimum 200 episodes for results. episode represent trade and learn on all data.
+episodes = 10000  # (int) > 0 ,minimum 200 episodes for results. episode represent trade and learn on all data.
 batch_size = 1  # (int) > 0 size of a batched sampled from replay buffer for training
 random_action_decay = 0.8993  # (float) 0-1
 future_reward_importance = 0.9500  # (float) 0-1 aka decay or discount rate, determines the importance of future
